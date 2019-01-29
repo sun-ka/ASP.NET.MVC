@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "WorkingWithForms";
+}
+
+<h2>WorkingWithForms</h2>
+
+
+@{
+    var Result = "";
+    if (IsPost)
+    {
+      
+            var num1 = Request["Num1"];
+            var num2 = Request["Num2"];
+            var Sum = num1.AsInt() + num2.AsInt();
+            Result = "Sum = " + Sum;
+       
+
+    }
+}
+<html>
+<body style="background-color: beige; font-family: Verdana, Arial;">
+    <form action="" method="post">
+        <p>
+            <label for="Num1">First Number:</label><br>
+            <input type="text" name="Num1" />
+        </p>
+        <p>
+            <label for="Num2">Second Number:</label><br>
+            <input type="text" name="Num2" />
+        </p>
+        <p><input type="submit" value=" Add " /></p>
+    </form>
+    <p>@Result</p>
+</body>
+</html>
+

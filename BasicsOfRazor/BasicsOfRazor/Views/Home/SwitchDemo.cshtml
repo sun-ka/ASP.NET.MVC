@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "SwitchDemo";
+}
+
+<h2>SwitchDemo</h2>
+
+
+@{
+    var Department = "S";
+
+    var Result = "";
+}
+
+@switch (Department)
+{
+    case "H":
+        Result = "Human Resources Department.";
+        break;
+    case "S":
+        Result = "Sales Department.";
+        break;
+    case "F":
+        Result = "Finance Department!";
+        break;
+    default:
+        Result = "Invalid Department Code..";
+        break;
+}
+<p>@Result</p>

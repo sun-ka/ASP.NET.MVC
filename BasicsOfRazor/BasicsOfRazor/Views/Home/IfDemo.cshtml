@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "IfDemo";
+}
+
+<h2>IfDemo</h2>
+
+@{
+    var txt = "";
+    if (DateTime.Now.Hour > 12)
+    { txt = "Good Evening"; }
+    else
+    { txt = "Good Morning"; }
+}
+<p>The message is @txt</p>
+
+@{var Cost = 25;}
+
+@if (Cost >= 30)
+{
+    <p>The Cost is high.</p>
+}
+else if (Cost > 20 && Cost < 30)
+{
+    <p>The Cost is OK.</p>
+}
+else
+{
+    <p>The Cost is low.</p>
+}
+
+
+@{
+    var result = "";
+    if (IsPost)
+    {
+        result = "This page was posted using the Submit button.";
+    }
+    else
+    {
+        result = "This was the first request for this page.";
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="POST" action="">
+        <input type="Submit" name="Submit" value="Submit" />
+        <p>@result</p>
+    </form>
+</body>
+</html>
+

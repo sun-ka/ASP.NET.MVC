@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    @:Your Name <input type="text" name="name" value=" " /><br />
+    @:Choose your Favourite categories :
+    <input type="checkbox" name="categories" value="Electronics" /><span>Electronics</span>
+    <input type="checkbox" name="categories" value="Appliances" /><span>Appliances</span>
+    <input type="checkbox" name="categories" value="Furniture" /><span>Furniture</span>
+    <input type="checkbox" name="categories" value="Books" /><span>Books</span>
+    <br />
+    <input type="submit" name="btnSubmit" value="Submit" />
+}
+<hr />
+
+@using (Html.BeginForm("GetPersonDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @:Person ID :  <input type="text" name="PersonID" value="" />
+    <label>First Name</label><input type="text" name="FirstName" value=" " /><br />
+    <label>Last Name</label><input type="text" name="LastName" value=" " /><br />
+
+    <label>Country</label><input type="text" name="Address.Country" value=" " /><br />
+    <label>Street</label><input type="text" name="Address.Street" value=" " /><br />
+    <label>City</label><input type="text" name="Address.City" value=" " /><br />
+
+    <label>Photo</label><input type="file" name="photo" value="" /><br />
+    <input type="submit" name="btnSubmit" value="Submit" />
+}
+<hr />
+
+@using (Html.BeginForm("GetAddressDetails", "Home"))
+{
+    <div>
+        Present Address<br />
+        Country<input type="text" name="Present.Country" /><br />
+        Street<input type="text" name="Present.Street" /><br />
+        City<input type="text" name="Present.City" /><br />
+    </div>
+    <div>
+        Permanent Address<br />
+        Country<input type="text" name="Permanent.Country" /><br />
+        Street<input type="text" name="Permanent.Street" /><br />
+        City <input type="text" name="Permanent.City" /><br />
+    </div>
+    <input type="submit" name="btnSubmit" value="Submit" />
+}
+<hr />
+
+
+@using (Html.BeginForm("GetCustomerDetails", "Home"))
+{
+    <div>
+        Customer ID: <input type="text" name="CustomerID" value="1" />
+    </div>
+    <div>
+        Present Address<br />
+        Country<input type="text" name="pac" /><br />
+        Street<input type="text" name="ps" /><br />
+        City<input type="text" name="pc" /><br />
+    </div>
+    <div>
+        Permanent Address<br />
+        Country<input type="text" name="pmac" /><br />
+        Street<input type="text" name="pms" /><br />
+        City <input type="text" name="pmc" /><br />
+    </div>
+    <input type="submit" name="btnSubmit" value="Submit" />
+}

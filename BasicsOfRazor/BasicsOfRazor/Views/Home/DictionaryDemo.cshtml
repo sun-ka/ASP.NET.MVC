@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "DictionaryDemo";
+}
+
+<h2>DictionaryDemo</h2>
+
+
+@{
+    var Marks = new Dictionary<string, int>();
+    Marks.Add("Sub1", 71);
+    Marks.Add("Sub2", 82);
+    Marks.Add("Sub3", 100);
+    Marks.Add("Sub4", 59);
+}
+<p>My score on Sub 3 is: @Marks["Sub3"]%</p>
+@{Marks["Sub4"] = 79;}
+<p>Modified marks of Sub 4 is: @Marks["Sub4"]%</p>

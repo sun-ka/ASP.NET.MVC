@@ -1,0 +1,13 @@
+﻿@model string[]
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="view">
+    This is a list of Player names:
+
+    @foreach (string name in Model)
+    {
+        <span><b>@name</b></span>
+    }
+</div>

@@ -1,0 +1,75 @@
+﻿@model StronglyTypedModelViewsDemo.Models.Products
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table border="1" bgColor="aqua">
+    @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+    {
+        <tr>
+            <td>@Html.Label("ProductID", "Product ID: ") </td>
+            <td>@Html.TextBox("ProductID")</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("CategoryID", "Category ID :  ") </td>
+            <td>@Html.TextBox("CategoryID")</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("ProductName", "ProductName: ")</td>
+            <!-- <td>@Html.TextBox("ProductName")</td> -->
+            <td>@Html.TextBoxFor(prod => prod.ProductName)</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.Label("Quantity", "Quantity: ") </td>
+            <td>@Html.TextBoxFor(prod => prod.Quantity)</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.Label("UnitsInStock", "Units In Stock: ") </td>
+            <td>@Html.TextBoxFor(prod => prod.UnitsInStock)</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.Label("Discontinued", "Discontinued? :")</td>
+            <td>@Html.CheckBoxFor(prod => prod.Discontinued) </td>
+
+        </tr>
+        <tr>
+            <td>@Html.Label("Cost", "Cost: ")</td>
+            <td>@Html.TextBoxFor(prod => prod.Cost)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("LaunchDate", "LaunchDate: ") </td>
+            <td>@Html.TextBoxFor(prod => prod.LaunchDate, null, "{0:d}") </td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("Tax", "Tax: ") </td>
+            <td>@Html.TextBoxFor(prod => prod.Tax) </td>
+        </tr>
+
+
+        <tr>
+            <td>@Html.Label("CategoryID", "Categories: ") </td>
+            <td>@Html.DropDownList("CategoryID", TempData["CategoriesList"] as SelectList) </td>
+
+
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="btnSumit" value="Submit" /></td>
+        </tr>
+
+    }
+
+</table>

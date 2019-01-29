@@ -1,0 +1,10 @@
+﻿
+<div>
+    <h1>I am coming here from MyPartial view.</h1>
+    @foreach (string str in new[] { "Index", "About", "Contact" })
+    {
+        @Html.ActionLink(str + " | ", str)
+       
+    }
+</div>
+
